@@ -13,9 +13,11 @@ public class WaypointMovement : MonoBehaviour
     {
         if(Vector3.Distance(transform.position, waypoints[currentWaypointIndex].transform.position)< .1f)
         {
+            //increases to the next waypoint until the length of the array is met then starts over at 0
             currentWaypointIndex++;
             if (currentWaypointIndex >= waypoints.Length)
             {
+                //start over
                 currentWaypointIndex = 0;
             }
         }

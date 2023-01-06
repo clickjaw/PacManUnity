@@ -27,7 +27,7 @@ public class PlayerMovement : MonoBehaviour
 
         rb.velocity = new Vector3(horizontalInput * movementSpeed, rb.velocity.y, verticalInput * movementSpeed);
 
-
+        //if you press space AND you are on the ground you can jump
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             Jump();
@@ -43,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
 
     bool IsGrounded()
     {
+        //checks to see if player is touching platform before you can jump again
         return Physics.CheckSphere(groundCheck.position, 0.1f, ground);
     } 
 }

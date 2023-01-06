@@ -10,6 +10,7 @@ public class PlayerLife : MonoBehaviour
 
     private void Update()
     {
+        //if you are below a platform you die
         if (transform.position.y < -1f && !dead)
         {
             Die();
@@ -18,6 +19,7 @@ public class PlayerLife : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
+        //if you collide with a ghost you die
         if (collision.gameObject.CompareTag("Ghost"))
         {
 
